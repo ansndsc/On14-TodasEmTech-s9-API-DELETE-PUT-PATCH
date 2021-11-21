@@ -3,27 +3,27 @@ const express = require('express');
 
 const router = express.Router();
 
-//@router GET /api/movies/
+//@route GET /movies/
 //@desc Listar todos os filmes
 //@access Public
 router.get('/', movieController.getAll);
 
-//@router POST /api/movies/create
-//@desc Adicionar um novo filme
+//@route POST /movies/create
+//@desc Adicionar novo filme
 //@access Public
 router.post('/create', movieController.postNewMovie);
 
-//@router PATCH /api/movies/updatetitle/:id
-//@desc Atualizar o título de um filme
+//@route PATCH /movies/updatetitle/:id
+//@desc Atualizar título de filme
 //@access Public
 router.patch('/updatetitle/:id', movieController.patchUpdateTitleById);
 
-//@router PUT /api/movies/update/:id
+//@route PUT /movies/update/:id
 //@desc Atualizar qualquer informação, menos o id
 //@access Public
 router.put('/update/:id', movieController.updateById);
 
-//@router DELETE /api/movies/delete/:id
+//@router DELETE /movies/delete/:id
 //@desc Deletar filme
 //@access Public
 router.delete('/delete/:id', movieController.deleteMovie);
